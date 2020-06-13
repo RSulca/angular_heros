@@ -1,0 +1,24 @@
+
+<div class="container animated fadeIn fast mb-0">
+    <div class="display-3">{{listaHeroe.nombre | uppercase}}</div>
+    <hr>
+    <div class="row">
+        <div class="col-3">
+            <div class="row">
+                <img class="img-fluid mb-3" src="{{listaHeroe.img}}" style="
+                display: block;
+                margin-left: auto;
+                margin-right: auto;">
+                <a [routerLink]="['/heroes']" class="btn btn-outline-danger btn-block">Volver</a>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="row ml-5">
+                <p> <strong>Nombre:</strong>{{listaHeroe.nombre}} <br><br>
+                    <strong>Poder:</strong> {{listaHeroe.bio}} <br><br>
+                    <strong>Franquicia:</strong> {{listaHeroe.casa}} <br><br>
+                    <strong>Aparicion:</strong> {{listaHeroe.aparicion | date:'y'}}</p>  
+            </div>
+        </div>
+    </div>
+</div>

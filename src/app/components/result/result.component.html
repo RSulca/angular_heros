@@ -1,0 +1,36 @@
+<div class="container animet fadeIn fast">
+    <div class="row">
+        <div class="col-12">
+            <div class="display-3">
+                Resultados de {{nombre | uppercase}}
+            </div>
+            <hr>
+            <div class="row mt-5">
+                <div class="card-columns">
+                    <div class="card" *ngFor="let heroe of listaHeroe; let i = index">
+                        <img src="{{heroe.img}}" class="card-img-top rounded p-3 img-fluid" alt="{{heroe.nombre}}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{heroe.nombre}}</h5>
+                            <p class="card-text">{{heroe.bio}}</p>
+                            <p class="card-text">Pertenece a {{heroe.casa}}</p>
+                            <p class="card-text"><small class="text-muted">Apareció en {{heroe.aparicion}}</small></p>
+
+
+                            <button (click)="verHeroe(heroe.ide)" type="button" class="btn btn-outline-success btn-block">Ver
+                                más...</button>
+
+
+                            <!--<a [routerLink]="['/heroe',i]" class="btn btn-outline-success btn-block">Ver más link.</a>-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" *ngIf="listaHeroe.length == 0">
+        <div class="col-12">
+            <div class="alert alert-danger">No existe heroe con el nombre {{nombre | uppercase}}.</div>
+        </div>
+    </div>
+</div>
